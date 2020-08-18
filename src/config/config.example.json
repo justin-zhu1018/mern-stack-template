@@ -1,0 +1,4 @@
+{
+  "MONGODB_URI": "XXXXXXXXXXXXXXXXXX",
+  "DB_URL": "http://localhost:8080"
+}
