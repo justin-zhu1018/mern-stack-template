@@ -1,10 +1,10 @@
+
 const express = require("express");
 const router = express.Router();
-const example = require("../models/exampleModel");
-
+const BlogPost = require("../models/blogPost");
 //routes
 router.get("/", (req, res) => {
-  example.find({})
+  BlogPost.find({})
     .then((data) => {
       console.log("data");
       res.json(data);
@@ -23,8 +23,8 @@ router.get("/api/name", (req, res) => {
 router.post("/save", (req, res) => {
   console.log("Request Body: ", req.body);
   const data = req.body;
-  const newData = new example(data);
-  newData.save((error) => {
+  const newBlogPost = new BlogPost(data);
+  newBlogPost.save((error) => {
     if (error) {
       res.status(500).json({ msg: "error!" });
     } else {

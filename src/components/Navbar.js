@@ -8,7 +8,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
-import './Navbar.css';
+import './navbar.css';
 
 export default function SiteNavbar(props) {
   const [collapsed, setCollapsed] = useState(true);
@@ -29,8 +29,13 @@ export default function SiteNavbar(props) {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/OtherPage/">
+              <NavLink href="/other-page/">
                 <div className="list-text">Other Page</div>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/blog-page/">
+                <div className="list-text">Blog Page</div>
               </NavLink>
             </NavItem>
           </Nav>
