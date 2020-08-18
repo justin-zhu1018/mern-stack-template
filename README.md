@@ -3,13 +3,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Node Dependencies to Download
 
 This project involves many node dependecies. I will list them here: Mongoose, Express, Concurrently, Axios, Morgan, Nodemon, React-Router-Dom, Bootstrap, Reactstrap.<br /><br />
-Below is the code I used to install them all, obviously there is probably a one liner for all this, but this was how I did it in this project.<br />
+Below is the code I used to install them all.<br />
 
 `npm install mongoose express concurrently axios morgan -s`<br />
 `npm install -g nodemon`<br />
 `npm install react-router-dom`<br />
 `npm install --save bootstrap`<br />
-`npm install --save reactstrap react react-dom`<br />
+`npm install --save reactstrap react react-dom`<br /><br />
+
+Alternatively, you can try to clone this project and run `npm install`. Apparently that should work too. <br />
 
 ## Available Scripts
 
