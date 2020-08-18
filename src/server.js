@@ -4,12 +4,12 @@ const morgan = require('morgan');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 8080; //step 1
+const PORT = process.env.PORT || 5050; //step 1
 
 const routes = require('./routes/api');
 
 //connect mongoDB with mongoose
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/flazey', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/template', {
   //step 2
   useNewUrlParser: true,
   useUnifiedTopology: true,

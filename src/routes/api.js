@@ -1,4 +1,3 @@
-
 const express = require("express");
 const router = express.Router();
 const BlogPost = require("../models/blogPost");
@@ -14,7 +13,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/api/name", (req, res) => {
+router.get("/name", (req, res) => {
   const data = { username: "testcase", age: 2 };
   res.json(data);
 });
