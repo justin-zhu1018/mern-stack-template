@@ -8,7 +8,11 @@ Creating a new repository through the template button does work. Just need to ma
 ## Node Dependencies to Download
 
 This project involves many node dependecies. I will list them here: Mongoose, Express, Concurrently, Axios, Morgan, Nodemon, React-Router-Dom, Bootstrap, Reactstrap.<br /><br />
-Below is the code I used to install them all.<br />
+Assuming that you already have Node.js installed and everything, there are many ways to download the dependencies necessary to get it working. <br /><br />
+
+First way is to clone this project and in your local terminal, run `npm install`. <br /><br />
+
+Below is the code I used to install them all. This would be the second way.<br />
 
 `npm install mongoose express concurrently axios morgan -s`<br />
 `npm install -g nodemon`<br />
@@ -16,14 +20,13 @@ Below is the code I used to install them all.<br />
 `npm install --save bootstrap`<br />
 `npm install --save reactstrap react react-dom`<br /><br />
 
-Alternatively, you can try to clone this project and run `npm install`. Apparently that should work too. <br />
 
 ## When deploying to Heroku
 
 Make sure that you have Heroku connected to your GitHub account. This will make the process of connecting your application much easier as deployments will be through GitHub code that you push onto your repository.
 
 ## Get your config vars ready
-There are only two config vars necessary to get your web app up and running completely. One is for MongoDB Atlas connection (`MONGODB_URI`) and the other is your env var for production and development (`NODE_ENV`).
+There are only two config vars necessary to get your web app up and running completely. One is for MongoDB Atlas connection (`MONGODB_URI`) and the other is your env var for production and development (`NODE_ENV`). For the MongoDB Atlas URI, make sure you create a MongoDB atlas account, create a cluster, and there should be a button for you to connect it to your application. Make sure you follow all the steps and you should get a funky looking link to copy into the config vars section in Heroku. The env var has two options, "development" or "production". Usually you just keep it in production. 
 
 ## Available Scripts
 
