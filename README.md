@@ -18,6 +18,13 @@ Below is the code I used to install them all.<br />
 
 Alternatively, you can try to clone this project and run `npm install`. Apparently that should work too. <br />
 
+## When deploying to Heroku
+
+Make sure that you have Heroku connected to your GitHub account. This will make the process of connecting your application much easier as deployments will be through GitHub code that you push onto your repository.
+
+## Get your config vars ready
+There are only two config vars necessary to get your web app up and running completely. One is for MongoDB Atlas connection (`MONGODB_URI`) and the other is your env var for production and development (`NODE_ENV`).
+
 ## Available Scripts
 
 In the project directory, you can run:
