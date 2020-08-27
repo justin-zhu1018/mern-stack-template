@@ -1,5 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-## About the Project
+## About the Template
 
 The mern-stack-template is a template made for when I need to make a new web application. Most connections are already set up, all that's needed are some config variables. This repository does work on its own, however. <br /><br />Link is provided in the description or navigate to it <a href="https://jz-mern-stack-template.herokuapp.com/">here</a>. Note that it takes about 30 seconds to load up if left inactive for too long due to Heroku restrictions.
 
@@ -18,8 +17,7 @@ Below is the code I used to install them all. This would be the second way.<br /
 `npm install -g nodemon`<br />
 `npm install react-router-dom`<br />
 `npm install --save bootstrap`<br />
-`npm install --save reactstrap react react-dom`<br /><br />
-
+`npm install --save reactstrap react react-dom`
 
 ## When deploying to Heroku
 
@@ -27,6 +25,9 @@ Make sure that you have Heroku connected to your GitHub account. This will make 
 
 ## Get your config vars ready
 There are only two config vars necessary to get your web app up and running completely. One is for MongoDB Atlas connection (`MONGODB_URI`) and the other is your env var for production and development (`NODE_ENV`). For the MongoDB Atlas URI, make sure you create a MongoDB atlas account, create a cluster, and there should be a button for you to connect it to your application. Make sure you follow all the steps and you should get a funky looking link to copy into the config vars section in Heroku. The env var has two options, "development" or "production". Usually you just keep it in production. 
+<br />
+# Everything below this is auto-generated from create-react-app
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
