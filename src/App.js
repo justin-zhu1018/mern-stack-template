@@ -7,12 +7,7 @@ import Navbar from './components/navbar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Button} from 'reactstrap';
 // Comment this for Heroku until a better way is found
-// import {
-//   CLIENT_ID as c,
-//   API_KEY as a,
-//   DISCOVERY_DOCS as d,
-//   SCOPES as s,
-// } from './config/config.json';
+// import {CLIENT_ID, API_KEY, DISCOVERY_DOCS, SCOPES} from './config/config.json';
 
 export default class App extends Component {
   constructor(props) {
@@ -33,17 +28,11 @@ export default class App extends Component {
   //gapi initialization and log in check. Google listener set up to determine if authorization is set up.
   //If anything changes to the isSignedIn listener, this.handleAuthChange will be executed.
   initializeGapi = () => {
-    var API_KEY, CLIENT_ID, DISCOVERY_DOCS, SCOPES;
     if (process.env.NODE_ENV === 'production') {
       API_KEY = process.env.API_KEY;
       CLIENT_ID = process.env.CLIENT_ID;
       DISCOVERY_DOCS = process.env.DISCOVERY_DOCS;
       SCOPES = process.env.SCOPES;
-    } else {
-      API_KEY = a;
-      CLIENT_ID = c;
-      DISCOVERY_DOCS = d;
-      SCOPES = s;
     }
     window.gapi.client
       .init({
