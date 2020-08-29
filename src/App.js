@@ -6,8 +6,13 @@ import BlogPage from './pages/blogPage';
 import Navbar from './components/navbar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Button} from 'reactstrap';
-// Just comment this for Heroku
-// import {CLIENT_ID, API_KEY, DISCOVERY_DOCS, SCOPES} from './config/config.json';
+// Comment this for Heroku until a better way is found
+// import {
+//   CLIENT_ID as c,
+//   API_KEY as a,
+//   DISCOVERY_DOCS as d,
+//   SCOPES as s,
+// } from './config/config.json';
 
 export default class App extends Component {
   constructor(props) {
@@ -20,39 +25,26 @@ export default class App extends Component {
 
   //Load gapi and start initialization process right when site loads
   componentDidMount() {
-    console.log(process.env.NODE_ENV);
-    if (process.env.NODE_ENV === 'production') {
-      window.gapi.load('client:auth2', () => {
-        this.initializeGapiProd();
-      });
-    } else if (process.env.NODE_ENV === 'development') {
-      window.gapi.load('client:auth2', () => {
-        this.initializeGapiDev();
-      });
-    }
+    window.gapi.load('client:auth2', () => {
+      this.initializeGapi();
+    });
   }
 
   //gapi initialization and log in check. Google listener set up to determine if authorization is set up.
   //If anything changes to the isSignedIn listener, this.handleAuthChange will be executed.
-  initializeGapiProd = () => {
-    window.gapi.client
-      .init({
-        apiKey: process.env.API_KEY,
-        clientId: process.env.CLIENT_ID,
-        discoveryDocs: [process.env.DISCOVERY_DOCS],
-        scope: process.env.SCOPES,
-      })
-      .then(() => {
-        this.auth = window.gapi.auth2.getAuthInstance();
-        console.log('Auth: ', this.auth.isSignedIn.get());
-        console.log('Profile: ', this.auth.currentUser.get());
-
-        this.handleAuthChange();
-        this.auth.isSignedIn.listen(this.handleAuthChange);
-      });
-  };
-
-  initializeGapiDev = () => {
+  initializeGapi = () => {
+    var API_KEY, CLIENT_ID, DISCOVERY_DOCS, SCOPES;
+    if (process.env.NODE_ENV === 'production') {
+      API_KEY = process.env.API_KEY;
+      CLIENT_ID = process.env.CLIENT_ID;
+      DISCOVERY_DOCS = process.env.DISCOVERY_DOCS;
+      SCOPES = process.env.SCOPES;
+    } else {
+      API_KEY = a;
+      CLIENT_ID = c;
+      DISCOVERY_DOCS = d;
+      SCOPES = s;
+    }
     window.gapi.client
       .init({
         apiKey: API_KEY,
