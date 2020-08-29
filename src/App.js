@@ -7,7 +7,7 @@ import Navbar from './components/navbar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Button} from 'reactstrap';
 // Comment this for Heroku until a better way is found
-import {CLIENT_ID, API_KEY, DISCOVERY_DOCS, SCOPES} from './config/config.json';
+// import {CLIENT_ID, API_KEY, DISCOVERY_DOCS, SCOPES} from './config/config.json';
 
 export default class App extends Component {
   constructor(props) {
