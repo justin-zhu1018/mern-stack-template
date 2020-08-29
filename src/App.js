@@ -45,7 +45,6 @@ export default class App extends Component {
         this.auth = window.gapi.auth2.getAuthInstance();
         console.log('Auth: ', this.auth.isSignedIn.get());
         console.log('Profile: ', this.auth.currentUser.get());
-
         this.handleAuthChange();
         this.auth.isSignedIn.listen(this.handleAuthChange);
       });
