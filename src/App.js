@@ -40,10 +40,10 @@ export default class App extends Component {
     // scope: SCOPES,
     window.gapi.client
       .init({
-        apiKey: API_KEY,
-        clientId: CLIENT_ID,
-        discoveryDocs: [DISCOVERY_DOCS],
-        scope: SCOPES,
+        apiKey: process.env.API_KEY,
+        clientId: process.env.CLIENT_ID,
+        discoveryDocs: [process.env.DISCOVERY_DOCS],
+        scope: process.env.SCOPES,
       })
       .then(() => {
         this.auth = window.gapi.auth2.getAuthInstance();
