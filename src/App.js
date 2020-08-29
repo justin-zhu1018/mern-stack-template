@@ -6,7 +6,8 @@ import BlogPage from './pages/blogPage';
 import Navbar from './components/navbar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Button} from 'reactstrap';
-import {CLIENT_ID, API_KEY, DISCOVERY_DOCS, SCOPES} from './config/config.json';
+// Just comment this for Heroku
+// import {CLIENT_ID, API_KEY, DISCOVERY_DOCS, SCOPES} from './config/config.json';
 
 export default class App extends Component {
   constructor(props) {
