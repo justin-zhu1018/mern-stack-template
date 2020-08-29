@@ -66,15 +66,21 @@ export default class App extends Component {
         //signed in, so render an add event button and sign out button
         //visualize is a css descriptor to make the solid white boxes appear (in App.css)
         <div className="visualize">
-          <button onClick={this.handleAddEvent}>Add Event</button>
-          <button onClick={this.handleSignOut}>Sign Out</button>
+          <Button color="primary" onClick={this.handleAddEvent}>
+            Add Event
+          </Button>{' '}
+          <Button color="danger" onClick={this.handleSignOut}>
+            Sign Out
+          </Button>
         </div>
       );
     } else {
       //signed out, so render a sign in button
       return (
         <div className="visualize">
-          <button onClick={this.handleSignIn}>Sign In</button>
+          <Button color="success" onClick={this.handleSignIn}>
+            Sign In
+          </Button>
         </div>
       );
     }
@@ -141,7 +147,6 @@ export default class App extends Component {
             <Route path="/other-page" exact component={OtherPage} />
             <Route path="/blog-page" exact component={BlogPage} />
           </Switch>
-          <Button>Hi</Button>
           <div className="box">
             <div id="name-div" style={{display: 'none'}}>
               {this.state.name}
