@@ -29,10 +29,10 @@ export default class App extends Component {
   //If anything changes to the isSignedIn listener, this.handleAuthChange will be executed.
   initializeGapi = () => {
     if (process.env.NODE_ENV === 'production') {
-      API_KEY = process.env.API_KEY;
-      CLIENT_ID = process.env.CLIENT_ID;
-      DISCOVERY_DOCS = process.env.DISCOVERY_DOCS;
-      SCOPES = process.env.SCOPES;
+      this.API_KEY = process.env.API_KEY;
+      this.CLIENT_ID = process.env.CLIENT_ID;
+      this.DISCOVERY_DOCS = process.env.DISCOVERY_DOCS;
+      this.SCOPES = process.env.SCOPES;
     }
     window.gapi.client
       .init({
