@@ -19,14 +19,39 @@ export default class App extends Component {
 
   //Load gapi and start initialization process right when site loads
   componentDidMount() {
-    window.gapi.load('client:auth2', () => {
-      this.initializeGapi();
-    });
+    console.log(process.env.NODE_ENV);
+    if (process.env.NODE_ENV === 'production') {
+      window.gapi.load('client:auth2', () => {
+        this.initializeGapiProd();
+      });
+    } else if (process.env.NODE_ENV === 'development') {
+      window.gapi.load('client:auth2', () => {
+        this.initializeGapiDev();
+      });
+    }
   }
 
   //gapi initialization and log in check. Google listener set up to determine if authorization is set up.
   //If anything changes to the isSignedIn listener, this.handleAuthChange will be executed.
-  initializeGapi = () => {
+  initializeGapiProd = () => {
+    window.gapi.client
+      .init({
+        apiKey: process.env.API_KEY,
+        clientId: process.env.CLIENT_ID,
+        discoveryDocs: [process.env.DISCOVERY_DOCS],
+        scope: process.env.SCOPES,
+      })
+      .then(() => {
+        this.auth = window.gapi.auth2.getAuthInstance();
+        console.log('Auth: ', this.auth.isSignedIn.get());
+        console.log('Profile: ', this.auth.currentUser.get());
+
+        this.handleAuthChange();
+        this.auth.isSignedIn.listen(this.handleAuthChange);
+      });
+  };
+
+  initializeGapiDev = () => {
     window.gapi.client
       .init({
         apiKey: API_KEY,
